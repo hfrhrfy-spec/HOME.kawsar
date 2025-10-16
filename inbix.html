@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Social Links</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+
+    body, html {
+        height: 100%;
+    }
+
+    body {
+        background: #ffffff;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    .profile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 30px;
+        position: relative;
+    }
+
+    .profile button {
+        width: 145px;
+        height: 145px;
+        border-radius: 50%; 
+        border: 4px solid #00000020;
+        background-image: url('https://i.postimg.cc/FF0cxqCg/Picsart-25-10-16-17-09-41-498.jpg');
+        background-size: cover;
+        background-position: center;
+        box-shadow: 0 0 20px rgba(0,0,0,0.15);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        outline: none;
+        position: relative;
+    }
+
+    .profile button:hover {
+        transform: scale(1.08);
+        box-shadow: 0 0 30px rgba(0,0,0,0.25);
+    }
+
+    /* লোগো ওভারলে */
+    .logo-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 145px;
+        height: 145px;
+        transform: translate(-50%, -50%);
+        background: url('https://ibb.co.com/ZRp5QYXT') center/cover no-repeat;
+        border-radius: 50%;
+        pointer-events: none;
+    }
+
+    .name-frame {
+        display: inline-block; 
+        padding: 20px 40px; 
+        border-radius: 25px; 
+        background: #10; 
+        box-shadow: 0 0 20px rgba(0,0,0,0.5), 0 0 40px rgba(0,0,0,0.3) inset;
+        margin-top: 12px;
+    }
+
+    .name-frame h1 {
+        font-size: 28px;
+        font-weight: 800;
+        background: linear-gradient(270deg, pink, orange, skyblue, red, green, yellow);
+        background-size: 1200% 1200%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: gradientAnimation 8s ease infinite, glow 2s ease-in-out infinite alternate;
+        text-shadow: 0 0 5px rgba(255,255,255,0.5);
+        margin: 0;
+    }
+
+    @keyframes gradientAnimation {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    @keyframes glow {
+        0% { text-shadow: 0 0 5px rgba(255,255,255,0.3), 0 0 10px rgba(255,255,255,0.2); }
+        50% { text-shadow: 0 0 15px rgba(255,255,255,0.5), 0 0 25px rgba(255,255,255,0.4); }
+        100% { text-shadow: 0 0 5px rgba(255,255,255,0.3), 0 0 10px rgba(255,255,255,0.2); }
+    }
+
+    .buttons {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        width: 90%;
+        max-width: 400px;
+        justify-items: center;
+        margin-bottom: 40px;
+    }
+
+    .buttons a {
+        display: block;
+        width: 110px;
+        height: 110px;
+        border-radius: 15px;
+        text-decoration: none;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 1000;
+        cursor: pointer;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        transition: all 0.3s ease;
+    }
+
+    .buttons a:hover {
+        transform: scale(1.07);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    #facebookBtn { background-image: url('https://i.postimg.cc/qRk4J2fv/Picsart-25-10-16-03-06-11-742.jpg'); background-size: cover; background-position: center; }
+    #instagramBtn { background-image: url('https://i.postimg.cc/fTZzB4q0/Picsart-25-10-16-03-17-13-673.jpg'); background-size: cover; background-position: center; }
+    #tiktokBtn { background-image: url('https://i.postimg.cc/RVjTjRfB/Picsart-25-10-16-03-19-14-354.jpg'); background-size: cover; background-position: center; }
+    #phoneBtn { background-image: url('https://i.postimg.cc/PJDMxvns/8176ff883b2a176fda0837019474a6e4.jpg'); background-size: cover; background-position: center; }
+    #whatsappBtn { background-image: url('https://i.ibb.co/RG0852VN/whatsapp.png'); background-size: cover; background-position: center; }
+    #telegramBtn { background-image: url('https://i.ibb.co/rGYzHRZL/telegram.png'); background-size: cover; background-position: center; }
+    #websiteBtn { background-image: url('https://i.ibb.co/HLfZ3RpJ/website-img.png'); background-size: cover; background-position: center; }
+    #emailBtn { background-image: url('https://i.ibb.co/tMSdxZHk/email-image.png'); background-size: cover; background-position: center; }
+
+    footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80px;
+        padding: 10px 20px;
+        margin-bottom: 10px;
+        background: #10;
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.5), 0 0 40px rgba(0,0,0,0.3) inset;
+    }
+
+    footer p {
+        font-size: 16px;
+        font-weight: 1500;
+        color: #fff;
+        background: linear-gradient(270deg, pink, orange, skyblue, red, green, yellow);
+        background-size: 1200% 1200%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: gradientFooter 8s ease infinite, glowFooter 2s ease-in-out infinite alternate;
+        text-shadow: 0 0 5px rgba(255,255,255,0.5);
+        margin: 0;
+    }
+
+    @keyframes gradientFooter {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    @keyframes glowFooter {
+        0% { text-shadow: 0 0 5px rgba(255,255,255,0.3), 0 0 10px rgba(255,255,255,0.2); }
+        50% { text-shadow: 0 0 15px rgba(255,255,255,0.5), 0 0 25px rgba(255,255,255,0.4); }
+        100% { text-shadow: 0 0 5px rgba(255,255,255,0.3), 0 0 10px rgba(255,255,255,0.2); }
+    }
+</style>
+</head>
+<body>
+
+    <div class="profile">
+        <button id="profileBtn"></button>
+        <div class="logo-overlay"></div>
+        <div class="name-frame">
+            <h1>𝐊ᴀ𝐰sᴀʀ</h1>
+        </div>
+    </div>
+
+    <div class="buttons">
+        <a href="https://www.facebook.com/ng.kawsar.635843" target="_blank" id="facebookBtn"></a>
+        <a href="https://www.instagram.com/kawsar.784?igsh=djk3b2V0ZmRzNzQ4" target="_blank" id="instagramBtn"></a>
+        <a href="https://www.tiktok.com/@a.kawsar007?_t=ZS-90azO28KowK&_r=1" target="_blank" id="tiktokBtn"></a>
+        <a href="tel:+8801744322465" id="phoneBtn"></a>
+        <a href="https://wa.me/message/HYZ5AN4KH7BWO1" target="_blank" id="whatsappBtn"></a>
+        <a href="https://t.me/kawsar76596" target="_blank" id="telegramBtn"></a>
+        <a href="https://www.example.com" target="_blank" id="websiteBtn"></a>
+        <a href="mailto:kawsar784123@gmail.com" id="emailBtn"></a>
+    </div>
+
+    <footer>
+        <p>🫀..........WELCOME..........🫀</p>
+    </footer>
+
+<script>
+    const profileBtn = document.getElementById("profileBtn");
+    profileBtn.addEventListener("click", () => { alert("প্রোফাইল বাটনে ক্লিক হয়েছে!"); });
+</script>
+
+</body>
+</html>
